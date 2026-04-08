@@ -1,0 +1,92 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand: #1d2147;
+  --color-brand-light: #2a3070;
+  --color-neutral: #efefef;
+  --font-sans: Helvetica, Arial, sans-serif;
+}
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Fade-up animation ─────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { opacity: 0; transform: translateX(-32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideRight {
+  from { opacity: 0; transform: translateX(32px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fade-up {
+  opacity: 0;
+}
+.animate-fade-up.in-view {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  opacity: 0;
+}
+.animate-fade-in.in-view {
+  animation: fadeIn 0.7s ease forwards;
+}
+
+.animate-slide-left {
+  opacity: 0;
+}
+.animate-slide-left.in-view {
+  animation: slideLeft 0.6s ease forwards;
+}
+
+.animate-slide-right {
+  opacity: 0;
+}
+.animate-slide-right.in-view {
+  animation: slideRight 0.6s ease forwards;
+}
+
+/* stagger delays */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* ── Portfolio styled scrollbar ────────────────────────────────── */
+.portfolio-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #1d2147 transparent;
+}
+.portfolio-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.portfolio-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.portfolio-scroll::-webkit-scrollbar-thumb {
+  background-color: #1d2147;
+  border-radius: 99px;
+}
+.portfolio-scroll::-webkit-scrollbar-thumb:hover {
+  background-color: #2a3070;
+}
+
